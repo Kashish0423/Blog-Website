@@ -1,0 +1,34 @@
+
+<%- include("partials/header.ejs") -%>
+<h1>Home</h1>
+
+<p><%=startingText%></p>
+
+
+
+
+
+
+<%for (var i=0; i< postArr.length; i++){%>
+
+    <h1>
+        <%= postArr[i].title %>
+        
+    </h1>
+
+<p>
+   <% const my_length= 100 ;  %>
+
+    <%var blogString= postArr[i].content ; %>
+
+   <% var ans= blogString.slice(0,100) + " ..." ; %> 
+    <%= ans %>
+ 
+    <a href="<%='posts/'+ postArr[i]._id %>">Read More</a>
+
+    
+</p>
+
+<%}%>
+
+<%- include("partials/footer.ejs") -%>
